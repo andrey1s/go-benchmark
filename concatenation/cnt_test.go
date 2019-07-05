@@ -86,6 +86,26 @@ func BenchmarkJoinInt(b *testing.B) {
 	}
 }
 
+func BenchmarkJoinFloat(b *testing.B) {
+	in := getFloat(100)
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		data := make([]string, 100)
+		for i, r := range in {
+			data[i] = strconv.FormatFloat(r, 'g', -1, 64)
+		}
+		join(data...)
+	}
+}
+
+func BenchmarkFor100(b *testing.B) {
+	data := getString(100)
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		for100(data...)
+	}
+}
+
 func BenchmarkConc100(b *testing.B) {
 	data := getString(100)
 	b.ResetTimer()

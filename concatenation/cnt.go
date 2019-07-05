@@ -30,6 +30,14 @@ func ffmt(format string, in ...float64) string {
 	return fmt.Sprintf(format, in)
 }
 
+func for100(in ...string) string {
+	var r string
+	for _, i := range in {
+		r += i
+	}
+	return r
+}
+
 func cnt100(in ...string) string {
 	return in[0] + " " + in[1] + " " + in[2] + " " + in[3] + " " + in[4] + " " + in[5] + " " + in[6] + " " + in[7] + " " + in[8] + " " + in[9] + " " +
 		in[10] + " " + in[11] + " " + in[12] + " " + in[13] + " " + in[14] + " " + in[15] + " " + in[16] + " " + in[17] + " " + in[18] + " " + in[19] + " " +
